@@ -13,9 +13,9 @@
   <title>Bootstrap Theme</title>
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#main-nav" id="home">
   <!-- Nav bar -->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <nav id="main-nav" class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
     <div class="container">
       <a href="index.html" class="navbar-brand">LoopLAB</a>
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -106,7 +106,7 @@
   </header>
 
   <!-- EXPLORE HEAD -->
-  <section id="explore-head-section">
+  <section id="explore-head-section" class="pt-2">
     <div class="container">
       <div class="row">
         <div class="col text-center py-5">
@@ -154,7 +154,7 @@
   </section>
 
   <!-- CREATE HEAD -->
-  <section id="create-head-section" class="bg-primary">
+  <section id="create-head-section" class="bg-primary pt-2">
     <div class="container">
       <div class="row">
         <div class="col text-center py-5">
@@ -167,7 +167,7 @@
     </div>
   </section>
 
-  <!-- EXPLORE SECTION -->
+  <!-- CREATE SECTION -->
   <section id="create-section" class="py-5">
     <div class="container">
       <div class="row">
@@ -202,7 +202,7 @@
   </section>
 
   <!-- SHARE HEAD -->
-  <section id="shrare-head-section" class="bg-primary">
+  <section id="share-head-section" class="bg-primary pt-2">
     <div class="container">
       <div class="row">
         <div class="col text-center py-5">
@@ -216,7 +216,7 @@
   </section>
 
   <!-- Share SECTION -->
-  <div id="share-section" class="bg-light text-muted py-5">
+  <section id="share-section" class="bg-light text-muted py-5">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
@@ -247,6 +247,52 @@
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="main-footer" class="bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center py-4">
+          <h3>LoopLAB</h3>
+          <p>Copyright &copy; <span id="year"></span></p>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#contactModal">Contact Us</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Contact modal -->
+  <div class="modal fade text-dark" id="contactModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Contact Us</h5>
+          <button class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="name">Message</label>
+              <textarea class="form-control"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary btn-block" data-dismiss="modal">Send</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <span id="year"></span>
@@ -260,6 +306,30 @@
   <script>
     // Get the current year for the copyright
     $('#year').text(new Date().getFullYear());
+
+    $('body').scrollspy({ target: '#main-nav' });
+    //Add smooth scrolling
+    $('#main-nav a').on('click', function (e) {
+      // Check for a hash value
+      if (this.hash !== '') {
+        // Prevent efault behavior
+        e.preventDefault();
+        // Store the hash in variable
+        const hash = this.hash;
+        // Animate smooth scroll
+        $('html, body').animate(
+          { scrollTop: $(hash).offset().top },
+          800,
+          function () {
+            // Add hash to URL after scroll
+            window.location.hash = hash
+          }
+        )
+      }
+    })
+
+
+
   </script>
 </body>
 
