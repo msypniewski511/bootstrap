@@ -38,3 +38,12 @@ body {
   background: #fff;
   border-radius: 5px;
 }
+
+/* Explore Section */
+#explore-section .fas,
+#share-section .fas {
+  background: #333;
+  color: #fff;
+  border-radius: 5px;
+  padding: 3px;
+}
