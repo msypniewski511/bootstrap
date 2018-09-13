@@ -1,3 +1,6 @@
+body {
+  overflow-x: hidden;
+}
 .navbar .nav-link {
   font-size: 14px;
   text-transform: uppercase;
@@ -60,4 +63,18 @@
 
 #video-play a {
   color: #fff;
+}
+
+/* Page About Us */
+#page-header {
+  height: 200px;
+  background: url("../img/image1.jpg");
+  background-position: 0 -360px;
+  background-attachment: fixed;
+  color: #fff;
+  border-bottom: 1px #eee solid;
+}
+
+.about-img {
+  margin-top: -60px;
 }
