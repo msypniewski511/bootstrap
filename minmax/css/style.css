@@ -32,14 +32,26 @@ body {
   margin: auto;
   border-bottom: 1px solid #ddd; }
 
+/* line 45, ../scss/style.scss */
+#authors img {
+  margin-top: -50px; }
+/* line 49, ../scss/style.scss */
+#authors .card:hover {
+  background: #3292a6;
+  color: #fff; }
+  /* line 53, ../scss/style.scss */
+  #authors .card:hover i,
+  #authors .card:hover .text-muted {
+    color: #fff !important; }
+
 @media (max-width: 768px) {
-  /* line 43, ../scss/style.scss */
+  /* line 61, ../scss/style.scss */
   #showcase {
     min-height: 500px; }
-    /* line 46, ../scss/style.scss */
+    /* line 64, ../scss/style.scss */
     #showcase h1 {
       font-size: 4rem; }
 
-  /* line 51, ../scss/style.scss */
+  /* line 69, ../scss/style.scss */
   .mb-resp {
     margin-bottom: 1rem; } }
